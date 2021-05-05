@@ -1,0 +1,68 @@
+{# TODO : manage errors display #}
+
+<form method="post" enctype="multipart/form-data">
+        <fieldset>
+        <legend>Identité : </legend>
+            
+            <input type="hidden" value="{{ user.id }}" name="id">
+            <div>
+                <input type="text" value="{{ user.lastName }}" name="lastName" placeholder="Nom" pattern="[A-Za-z '-]+$" maxlength="50" >
+                <input type="text" value="{{ user.firstName }}" name="firstName" placeholder="Prénom" pattern="[A-Za-z '-]+$" maxlength="50">    
+                <p class="errors"> {{errors.firstName1}}  {{ errors.lastName1 }}</p>
+            </div>
+            
+            <div>
+                <label for="age">Date de naissance : </label>
+                <input type="date" value="{{ user.age }}" name="age">
+                <p class="errors"> {{errors.age1}} {{ errors.age2 }} </p>
+            </div>
+        </fieldset>  
+
+        <fieldset>
+            <legend>Adresse : </legend>
+                    
+                <input type="number" value="{{ user.adresseNumber }}" name="adresseNumber" placeholder="23" pattern="^[0-9]+$" >
+                <input type="text" value="{{ user.adresseStreet }}" name="adresseStreet" placeholder="rue du kebab" pattern="[A-Za-zÀ-ú '-]+$" >
+                <br>  
+                <input type="number" value="{{ user.adressePostal }}" name="adressePostal" placeholder="67200" pattern="^[0-9]{5}$">   
+                <input type="text" value="{{ user.adresseCity }}" name="adresseCity" placeholder="Strasbourg" pattern="[A-Za-zÀ-ú '-]+$">
+                <p class="errors"> {{errors.adress}}</p>
+                <label for="tel"> Mobile :</label>
+                <input type"tel" value="{{ user.phoneNumber }}" name="phoneNumber" placeholder="0623546989" pattern="^[0-9]+$">
+        </fieldset>
+        
+        <fieldset>
+            <legend>Photo et identifiant profile : </legend>
+
+            <label for="avatar">Photo de profil : </label>
+            {% if not user.avatar %}
+                <input type="file" name="avatar" />
+            {% else %}
+                <span>{{ user.avatar }}</span>
+                <input type="file" name="avatar" />
+            {% endif %}
+                <p class"errors">{{errors.avatar1}} {{errors.avatar2}} {{errors.avatar3}}</p>
+            <br> 
+
+            <input type="email" value="{{ user.mail }}" name="mail" placeholder="adresse@mail"  >
+            <input type="password" value="{{ user.password }}" name="password" placeholder="Mot de passe" >
+            <p class="errors">
+                {% if errors.mail1 %} {{ errors.mail1}} {% else %} {{errors.mail2}}{{ errors.mail3 }} {% endif %}
+                {% if not errors.password1 %} {{ errors.password2 }} {% else %} {{ errors.password1}} {% endif %}
+            </p>
+            
+        </fieldset>
+
+        <div class="formLink">
+        {% if not user %}
+            <a class="link" href="/auth/logIn">Déjàs membre ?</a>
+        {% elseif user.id == session.user.id %}
+            <a class="link" href="/user/userShow/{{user.id}}"> Back </a>
+        {% endif %}
+            <input type="submit" value="Valider">
+        </div>
+            
+    
+
+	
+</form>

@@ -1,0 +1,30 @@
+<header class="headerNav">
+    <div class="logo">
+        <p>StrassHelp</p>
+    </div>
+    
+    
+   
+    <nav>
+        
+        <div class="nav">
+        <div class="mobile menuBtn">Menu</div>
+            <ul>
+                <li><a href="/">Acceuil</a></li>
+                <li><a href="/user/allUsers">Helpers</a></li>
+                <li><a href="/advert/index">Helps</a></li>
+                {% if session.user %}<li><a href="/auth/logOut">Log-out</a></li>{% else %}<li><a href="/auth/logIn">Log-In </a></li>{% endif %}
+                {% if not session.user %}<li><a href="/user/add">s'inscrire</a></li>{% endif %}
+            </ul>
+        </div>  
+        {% if session %}
+        <div class="userProfil">
+            <div class="btnProfil"><img src="/assets/images/img/avatar.png"></div>  
+                {% include 'Default/infosUser.html.twig' %}    
+        </div>
+        {% endif %}  
+    </nav>    
+
+    
+    
+</header>

@@ -1,0 +1,57 @@
+{% extends 'layout.html.twig' %}
+
+{% block content %}
+
+    <div class="wrapper advert">
+        <h1> {{ advert.title }}</h1>
+        
+        <h2>
+            
+            {# AVERAGE RATE #}
+            {% for index in average %}
+                {% if advert.id == index.advert %}
+                    <span> {{ index.average }}/5  pour {{index.nbRate}} avis<span>
+                {% endif %}
+            {% endfor %}
+            
+            {# HELPER #}
+            <a href="/user/userShow/{{ user.id }}" >by {{user.lastName}} {{user.firstName}}</a>
+            
+        </h2>
+        
+        <div>
+            {# DESCRIPTION AND DISPONIBILITY#}
+            <p> {{ advert.description }}</p>
+            <p>  {{ disponibility.timeTable }} </p>
+        </div>
+
+       {# If SESSION.USER.ADVERT OR ADMIN #}
+        {% if session.user.status == '1' or session.user.id == advert.user_id %}
+            <a href="/Advert/edit/{{ advert.id }}">Edit</a>
+        
+            <form class="delete" action="/Advert/delete/{{advert.id}}" method="POST">
+                <button>Delete</button>
+            </form>
+        
+        {% endif %}
+
+        {# ASK HELP OR BACK #}
+        {% if session.user.id != user.id  and session.user.badge > 0 %}
+            <a href="/Adverthelp/add/?advert_id={{advert.id}}&user_id={{user.id}}">Demander l'aide</a>
+        {% elseif session.user.id != user.id  and session.user.badge <= 0 %}
+            <p>Vous n'avez plus de badge pour demander de l'aide, aidez la communautée puis revenez !</p>
+        {% endif %}
+        <a href="/Advert/index">Back</a>
+    </div>
+
+    {# REVIEWS AND RATE #}
+    <div class="reviews">
+        {% for review in reviews %}
+            {% if review.advert_id == advert.id %}
+                <p>{{review.rate}}/5 -Posté le :{{review.date}}</p>
+                <p>{{review.comment}}</p>
+            {% endif %}
+        {% endfor %}
+    </div>
+    
+{% endblock %}

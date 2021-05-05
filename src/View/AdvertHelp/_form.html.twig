@@ -1,0 +1,18 @@
+
+<form method="post">
+
+	<input type="hidden" value="{{ adverthelp.id }}" name="id" >
+    <div>
+        <label for="title">type your message :</label>
+        <textarea value="{{ message.message }}" name="message" ></textarea>
+        <p class="errors"> {{errors.message1}} </p>
+    </div>
+    
+    {# Validate Help #}
+    {% if session.user.id != adverthelp|last.user_id and adverthelp != null %}
+        <label for="isValidate">cloture l'annonce ici (uniquement si il n'ya plus besoin d'aide) </label>
+        <input type= "checkbox" value"{{adverthelp.isValidate}}" name ="isValidate"></br>
+    {% endif %}
+    
+	<input type="submit" value="Envoyer">
+</form>

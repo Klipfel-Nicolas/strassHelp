@@ -1,0 +1,36 @@
+/* RATING STYLE */
+
+div.rating {
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: center;
+}
+
+.rating input[type=radio] {
+    display: none;
+    position: absolute;
+    left: 0;
+    width: 1%;
+    height: 1%;
+}
+
+.rating label {
+    font-size: 2rem;
+}
+
+.rating label:hover~label,
+.rating input:focus~label,
+.rating input.active~label,
+.rating label:hover {
+    color: orange;
+    cursor: pointer;
+}
+
+.rating label {
+    position: relative;
+    color: #aaa;
+    -webkit-transition: color .4s;
+    -moz-transition: color .4s;
+    -o-transition: color .4s;
+    transition: color .4s;
+}

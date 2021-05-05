@@ -1,0 +1,52 @@
+.profilDetails {
+    position: absolute;
+    top: 150%;
+    right: 10%;
+    padding: 5%;
+    transition: transform .3s ease-in;
+    z-index: 10000;
+    transform: scaleX(0.05);
+    transform-origin: right;
+}
+
+.profilDetails.active {
+    transform: scaleX(1);
+}
+
+.profilDetails .card {
+    opacity: 0;
+    transition: all .3s .1s linear;
+}
+
+.profilDetails.active .card {
+    opacity: 1;
+}
+
+.profilDetails .card {
+    background: #F5F5F5;
+    margin: 0;
+    padding: 5%;
+}
+
+.profilDetails h4 {
+    font-size: 1.3rem;
+    color: var(--dark-blue);
+}
+
+.profilDetails .card .body {
+    border-top: 1px solid var(--dark-blue);
+    border-bottom: 1px solid var(--dark-blue);
+}
+
+.profilDetails a {
+    width: 50%;
+    margin: 5% auto;
+}
+
+.profilDetails .card .body p {
+    color: var(--purple);
+}
+
+.profilDetails .card:hover h4 {
+    color: var(--yellow);
+}

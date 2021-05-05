@@ -1,0 +1,51 @@
+.addAdvert {
+    height: 90vh;
+    max-height: 90vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.addAdvert main {
+    justify-items: center;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex: 2;
+}
+
+.addAdvert .addForm,
+.addAdvert .addAdImg {
+    width: 40%;
+}
+
+.addAdvert .addForm {
+    padding: 20px;
+    height: 80%;
+}
+
+.addAdvert .addForm form {
+    padding: 10px;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+
+/* SVG */
+
+.addAdImg path {
+    fill: none;
+    stroke: var(--purple);
+    stroke-width: 5;
+    stroke-dasharray: 68496px;
+    stroke-dashoffset: 68496px;
+    animation: animSvgPurple 2s linear forwards;
+}
+
+@keyframes animSvgPurple {
+    to {
+        stroke-dashoffset: 0;
+        fill: var(--purple);
+    }
+}

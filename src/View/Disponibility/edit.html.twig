@@ -1,0 +1,9 @@
+
+{% extends 'layout.html.twig' %}
+
+{% block content %}
+    <h1>Modification de l'horaire' : </h1> <br>
+    {{ disponibility.timetable }}
+    {% include 'Disponibility/_form.html.twig' %}
+    <a href="/Disponibility/index">retour à la liste</a>
+{% endblock %}

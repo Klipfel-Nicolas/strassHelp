@@ -1,0 +1,181 @@
+:root {
+    --main-font: 'Economica', 'Advent Pro', 'Barlow', 'Josefin Sans', 'M PLUS Rounded 1c', 'Montserrat', 'Montserrat Alternates', 'Roboto';
+    --dark-blue: #367FAE;
+    --light-blue: #62B2C8;
+    --salmon: #FFDBB1;
+    --orange: #FF7A18;
+    --yellow: #F5B353;
+    --grey-dark: #292E35;
+    --grey-medium: #928f8f;
+    --grey-light: #bdb9b9;
+    --white: #EBECEE;
+    --yellow-light: #FFF3AD;
+    --purple: #8a7fa5;
+    --red-light: #f5705e;
+    --pink: #FFCAF2;
+    /*--salmon: #FFB2B1;*/
+    --green: #BCFFBC;
+    --blue: #A2EDFF;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-size: 24px;
+    font-family: var(--main-font);
+    color: var(--grey-dark);
+}
+
+body {
+    background-color: #F5F5F5;
+    min-height: 100vh;
+    max-width: 100vw;
+    overflow-x: hidden;
+}
+
+ul {
+    list-style: none;
+}
+
+a {
+    display: block;
+    text-decoration: none;
+    color: var(--light-blue);
+}
+
+h1 {
+    position: relative;
+    font-size: 3rem;
+    padding-bottom: 5%;
+    color: #4e5052;
+}
+
+h1::after {
+    position: absolute;
+    content: "";
+    left: 0;
+    bottom: 0;
+    width: 40%;
+    height: 5px;
+    background-color: var(--light-blue);
+}
+
+img {
+    max-width: 100%;
+}
+
+
+/* --------------------------------------------------- CLASS */
+
+
+/* only visible under 800px*/
+
+.mobile {
+    display: none;
+}
+
+
+/* WRAPPE and center PAGE*/
+
+.wrapper {
+    width: 80vw;
+    margin: 0 auto;
+}
+
+
+/* Relief text */
+
+.rightContainer h4,
+h1 {
+    text-shadow: 3px 3px 0px rgb(189, 189, 189), -3px -3px 0px rgb(255, 255, 255);
+}
+
+
+/* Relief BTN */
+
+.addAdvert .addForm form,
+.leftContainer .btnAdd,
+.userShow .coord,
+.profilDetails,
+.profilBtn a,
+.nav,
+nav ul li,
+.btnProfil,
+.profilDetails span,
+.profilDetails a,
+input:not([type=submit], [type=file]) {
+    box-shadow: 2px 2px 2px #bdbdbd, -2px -2px 2px #ffffff;
+    background: #F5F5F5;
+}
+
+
+/* Relief plus prononcer */
+
+input[type=submit],
+.profilBtn button,
+h1::after,
+.rightContainer .outerContainer,
+fieldset,
+.rightContainer .avatar {
+    box-shadow: 2px 5px 3px 0px #b8b8b8, -7px -3px 8px 3px #ffffff;
+}
+
+h1::after,
+.rightContainer .outerContainer,
+.edit fieldset,
+.signIn fieldset {
+    margin: 3% 0;
+}
+
+
+/* RADIUS */
+
+.infosProfil .icon img,
+.userShow .coord,
+.nav,
+nav ul,
+.profilDetails,
+.btnProfil,
+.avatarContainer img,
+.profilDetails span,
+.profilDetails a,
+.adminBtnContainer {
+    border-radius: 10px;
+}
+
+nav ul li {
+    border-radius: 1px;
+}
+
+
+/* Relief creusé */
+
+select,
+textarea,
+.addAdvert .addForm,
+.leftContainer .userAdvert,
+.infosProfil .icon img:active,
+.infos,
+.profilBtn button:active,
+.profilBtn a:active,
+.profilBtn form,
+nav ul,
+nav ul li:active,
+.btnProfil:active,
+.profilDetails a:active,
+.profilDetails .card,
+input:not([type=submit], [type=file]):focus,
+input[type=submit]:active,
+input[type=file],
+.rightContainer .innerContainer,
+.formLink {
+    box-shadow: inset 2px 2px 2px #bdbdbd, inset -2px -2px 2px #ffffff;
+}
+
+
+/* FONT_SIZE */
+
+.fontLight {
+    font-size: .8rem;
+}

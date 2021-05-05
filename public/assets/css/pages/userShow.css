@@ -1,0 +1,236 @@
+.userShow {
+    height: 90vh;
+    max-height: 90vh;
+}
+
+.userShow .profilContainer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 100%;
+}
+
+.userShow .rightContainer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 100%;
+    width: 40%;
+    position: relative;
+}
+
+.userShow .leftContainer {
+    width: 40%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+
+/* ----------------------- RIGHT CONTAINER ----------------------- */
+
+
+/* Avatar*/
+
+.rightContainer .outerContainer {
+    position: relative;
+    width: 23vw;
+    height: 23vw;
+    margin: 10% auto;
+}
+
+.rightContainer .innerContainer {
+    position: relative;
+    padding: 10px;
+    width: 23vw;
+    height: 23vw;
+    padding: 1%;
+}
+
+.rightContainer .outerContainer,
+.rightContainer .innerContainer,
+.rightContainer .avatar {
+    border-radius: 100%;
+}
+
+.rightContainer .avatar {
+    position: absolute;
+    padding: 10px;
+    width: 90%;
+    height: 90%;
+    top: 5%;
+    left: 5%;
+}
+
+.rightContainer .reputation {
+    text-align: center;
+}
+
+.rightContainer .rank {
+    font-size: 2.8rem;
+    color: /*var(--salmon)*/
+    var(--white);
+    text-shadow: 2px 3px 2px rgb(189 189 189), -3px -1px 2px rgb(255 255 255);
+}
+
+.rightContainer .rate {
+    color: var(--yellow);
+    font-size: 1.2rem;
+}
+
+.rightContainer.rate span {
+    font-size: .8rem;
+    color: var(--grey-medium);
+}
+
+.profilBtn {
+    display: flex;
+    justify-content: space-between;
+    text-align: center;
+}
+
+.userShow .profilBtn form,
+.userShow .profilBtn span {
+    flex: 1;
+    margin: 5%;
+    padding: 3%;
+}
+
+.userShow .profilBtn button:hover {
+    cursor: pointer;
+}
+
+.userShow .profilBtn button {
+    width: 100%;
+    background-color: var(--red-light);
+    border: 1px solid white;
+    color: var(--white);
+}
+
+
+/* ----------------------- PROFIL INFO ----------------------- */
+
+.userShow .infosProfil {
+    position: absolute;
+    left: 2%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 50%;
+}
+
+.infosProfil .coord {
+    display: flex;
+    align-items: center;
+    position: relative;
+}
+
+.infosProfil .coord .icon {
+    height: 50px;
+    width: 50px;
+    cursor: pointer;
+    padding: 5%;
+}
+
+.infosProfil .coord .icon img {
+    padding: 20%;
+    border: 1px solid var(--purple);
+}
+
+.infosProfil .infos {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    left: 120%;
+    height: 100%;
+    width: 200px;
+    background: var(--purple);
+    padding: 2%;
+    transform: scaleX(.01);
+    transform-origin: left;
+    transition: all .2s ease-out;
+}
+
+.infosProfil .active .infos {
+    width: 200px;
+    transform: scaleX(1);
+}
+
+.infos p {
+    color: var(--white);
+    font-size: .8rem;
+}
+
+
+/* ----------------------- LEFT CONTAINER ----------------------- */
+
+
+/* MES ANNONCES */
+
+.leftContainer .userAdvert {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 5%;
+}
+
+.leftContainer .userAdvertList {
+    display: flex;
+    margin: 20px 0;
+}
+
+
+/**/
+
+.leftContainer .userAdvertList .advertCardInner {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-start;
+    padding: 20px;
+    height: 100%;
+    border-radius: 5px;
+    border: 1px solid var(--grey-medium);
+    min-width: 200px;
+    max-width: 200px;
+}
+
+.userAdvertList .advertCardInner * {
+    text-align: start;
+}
+
+.userAdvertList .advertCard {
+    border-radius: 10px;
+    height: auto;
+    margin: 0;
+    transition: all .2s;
+}
+
+.userAdvertList .advertCard:hover {
+    transform: translateY(-1rem);
+}
+
+.userAdvertList .advertCard:hover~.advertCard {
+    transform: translateX(130px);
+}
+
+.userAdvertList .advertCard:not(:first-child) {
+    margin-left: -130px;
+}
+
+.userAdvertList .advertCard .description {
+    color: var(--white);
+    font-size: .8rem;
+    padding: 10% 0;
+}
+
+.userAdvertList .advertCard .category {
+    color: var(--grey-medium);
+}
+
+a.btnAdd {
+    padding: 0 5%;
+}

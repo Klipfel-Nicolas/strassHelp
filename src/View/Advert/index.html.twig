@@ -1,0 +1,70 @@
+{% extends 'layout.html.twig' %}
+
+{% block content %}
+     <div class="wrapper allAdvert advert">
+
+        <h1>Les Helps :</h1>
+
+        {% include 'Advert/_formFilters.html.twig' %}
+            <div class="advertList">
+                {% for key in advert %}
+                    {% if session.user.id != key.user_id %}
+
+                        <article class="card">
+                            <header>
+                                <a href="/Advert/show/{{key.id}}"><h4>{{ key.title }}</h4></a> 
+                                
+                                {# Category #}
+                                {% for index in category %}
+                                    {% if key.category_id == index.id %}
+                                        <p class="category">{{ index.name }} </p>
+                                    {% endif %}
+                                {% endfor %}
+                                                                
+                                {# Dispo #}
+                                {% for index in disponibility %}
+                                    {% if key.disponibility_id == index.id %}
+                                        <p class="dispo fontLight">Disponibilité : {{ index.timeTable }} </p>
+                                    {% endif %}
+                                {% endfor %}         
+                            </header>
+                            
+                            <div class="body">     
+                                {# Description #}
+                                <div class="description">
+                                    <p class="fontLight"> {{ key.description|slice(0,50) ~'...'}} </p>
+                                </div>
+                                
+                                <div class="review">
+                                    {# Rate #}
+                                    {% for index in average %}
+                                        {% if key.id == index.advert %}
+                                            <p class="rate"> {{ index.average }}/5  <span> pour {{index.nbRate}} avis</span></p>
+                                        {% endif %}
+                                    {% endfor %}
+                                </div>
+
+                            </div>
+
+                            <footer class="cardFooter">        
+                                {# Helper #}
+                                {% for ref in user %}
+                                    {% if ref.id == key.user_id %} 
+                                        
+                                            <img class="helperAvatar" src="/assets/images/membres/avatars/{{ref.avatar}}" alt="photo de profil" >
+                                            <a href="/user/userShow/{{key.user_id}}" class="helper"> {{ ref.lastName }} {{ ref.firstName }}</a> 
+                                        
+                                    {% endif %} 
+                                {% endfor %}                      
+                            </footer>
+                        </article>
+                        
+                    {% endif %}
+                {% else %}
+                    <p>Aucune annonce disponible !</p>
+                {% endfor %}
+
+            </div>
+    </div>
+
+{% endblock %}

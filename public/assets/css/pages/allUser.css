@@ -1,0 +1,46 @@
+.helpers .allUsers {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.helpers .card {
+    margin: 1%;
+}
+
+.helpers .card:hover h4 {
+    transform: translateZ(100px);
+}
+
+.helpers .card:hover h4,
+.helpers .card:hover .body p,
+.helpers .card:hover .btn {
+    background: linear-gradient(90deg, var(--salmon), var(--yellow), var(--orange));
+    text-shadow: none;
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.helpers .card:hover .body p {
+    transform: translateZ(50px);
+}
+
+.adminBtnContainer {
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+    padding: 5%;
+    margin-top: 5%;
+}
+
+.adminBtnContainer button,
+.adminBtnContainer a {
+    color: red;
+    border: 1px solid red;
+    width: 100px;
+}
+
+.helpers .card:hover .btn {
+    transform: translateZ(100px);
+}

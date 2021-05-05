@@ -1,0 +1,13 @@
+@import url(./general.css);
+@import url(./pages/allUser.css);
+@import url(./pages/addAdvert.css);
+@import url(./pages/home.css);
+@import url(./pages/advert.css);
+@import url(./pages/userShow.css);
+@import url(./components/header.css);
+@import url(./components/form.css);
+@import url(./components/review.css);
+@import url(./components/infosUserSession.css);
+@import url(./cards/card.css);
+@import url(./cards/advertCard.css);
+@import url(./responsive.css);

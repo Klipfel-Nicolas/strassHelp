@@ -1,0 +1,28 @@
+{% extends 'layout.html.twig' %}
+
+{% block content %}
+
+    {% for key in adverthelp %}
+        <p> {{ key.date }}</p>
+        <p> {{ key.message }}</p>
+     {% endfor %}
+
+    
+    {% if adverthelp|last.isValidate != 1 %} 
+        <form action="" method="POST">
+            <a href="/AdvertHelp/respond/?advert_id={{adverthelp.0.advert_id}}&user_id={{adverthelp.0.user_id}}&id_chat={{adverthelp.0.id_chat}}&advertHelp_id={{adverthelp|last.id}}">Ajouter un message</a>
+        </form>
+    {% elseif adverthelp|last.isValidate == 1 and session.user.id != adverthelp.0.user_id and adverthelp|last.id != review.advertHelp_id %}
+        <form action="" method="POST">
+            <a href="/review/add/?advert_id={{adverthelp.0.advert_id}}&user_id={{adverthelp.0.user_id}}&id={{adverthelp|last.id}}&id_chat={{adverthelp.0.id_chat}}">Avis</a>
+        </form>
+    {% else %}
+        <p>{{review.date}}</p>
+        <p> {{review.rate}}/5 <p>
+        <p> {{review.comment}}
+    {% endif %} 
+  
+    
+    <a href="/user/userShow/{{session.user.id}}">Retour</a>
+
+{% endblock %}

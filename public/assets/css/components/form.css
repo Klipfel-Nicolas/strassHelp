@@ -1,0 +1,160 @@
+/* -------------------------------------LOGIN */
+
+.login {
+    height: 80vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+.login form {
+    max-width: 50%;
+}
+
+
+/* INPUT */
+
+input {
+    margin: 1%;
+    padding: 5px 10px;
+    border: none;
+    outline: none;
+}
+
+input:not([type=submit], [type=file]):focus {
+    background: #efefef;
+}
+
+input[type=submit] {
+    color: var(--purple);
+}
+
+input[type=submit]:hover {
+    cursor: pointer;
+}
+
+textarea {
+    width: 100%;
+    border: none;
+    overflow: auto;
+    outline: none;
+    resize: none;
+    background: #F5F5F5;
+}
+
+textarea:focus {
+    background: var(--white);
+}
+
+select {
+    padding: 10px;
+    border-radius: 20px;
+    color: var(--purple);
+    border: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    -ms-appearance: none;
+    outline: none;
+}
+
+a.link {
+    font-size: .8rem;
+    padding: 5px 10px;
+}
+
+.cath,
+.draw {
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    z-index: -1;
+}
+
+.cath {
+    height: 100vh;
+}
+
+.cath path {
+    stroke-width: 10;
+    stroke-dasharray: 150575px;
+    stroke-dashoffset: 150575px;
+    animation: animSvg 5s ease forwards;
+}
+
+.draw {
+    width: 100vw;
+}
+
+.draw path {
+    fill: none;
+    stroke: black;
+    stroke-width: 5;
+    stroke-dasharray: 150575px;
+    stroke-dashoffset: 150575px;
+    animation: animSvg 5s ease forwards;
+}
+
+@keyframes animSvg {
+    to {
+        stroke-dashoffset: 0;
+        fill: #4444;
+        stroke: none;
+    }
+}
+
+
+/* -------------------------------------SIGN IN */
+
+.signIn {
+    max-height: 90vh;
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.signIn h1 {
+    padding-top: 5%;
+    align-self: flex-start;
+}
+
+.signIn h1::after {
+    width: 100%;
+    background-color: var(--light-blue);
+}
+
+fieldset,
+.formLink {
+    padding: 2% 1%;
+    text-align: center;
+    background: #efefef;
+}
+
+legend {
+    color: var(--dark-blue);
+}
+
+label {
+    font-size: .7rem;
+}
+
+.errors {
+    height: 1.3rem;
+    color: red;
+    font-size: .7rem;
+}
+
+.formLink {
+    display: flex;
+    justify-content: space-between;
+    margin: 5% 0;
+}
+
+
+/* -------------------------------------EDIT */
+
+.edit {
+    display: flex;
+    justify-content: space-around;
+}

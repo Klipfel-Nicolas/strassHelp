@@ -1,0 +1,84 @@
+@media screen and (max-width: 800px) {
+    /*  /////////////////// --GENERAL-- \\\\\\\\\\\\\\\\\\ */
+    .edit,
+    .helpers,
+    .signIn,
+    .userShow {
+        margin-bottom: 10vh;
+    }
+    h1 {
+        font-size: 2.5rem;
+    }
+    /*  /////////////////// --NAV-- \\\\\\\\\\\\\\\\\\ */
+    header {
+        position: fixed;
+        bottom: 0%;
+        right: 0%;
+        width: 100vw;
+    }
+    .logo {
+        display: none;
+    }
+    nav {
+        width: 100vw;
+    }
+    nav .nav {
+        margin-right: 10px;
+        border: 1px solid var(--salmon);
+    }
+    nav .nav ul {
+        width: 100%;
+    }
+    /* Mini Profil */
+    .profilDetails {
+        top: -1000%;
+        width: 60vw;
+    }
+    /*  ///////////////////-- EDIT USER --- \\\\\\\\\\\\\\\\\\ */
+    .signIn {
+        max-height: none;
+    }
+    .edit,
+    .signIn {
+        flex-direction: column;
+        align-items: center;
+    }
+    .edit .outerContainer,
+    .edit .innerContainer {
+        width: 60vw;
+        height: 60vw;
+    }
+    .edit .leftSide {
+        height: auto;
+        align-items: center;
+    }
+    .edit fieldset,
+    .signIn fieldset {
+        border: none;
+    }
+    .edit input[type=file],
+    .signIn input[type=file] {
+        width: 80%;
+    }
+    /*  ///////////////////-- Log in --- \\\\\\\\\\\\\\\\\\ */
+    .login input[type=submit] {
+        margin: 5% 0;
+    }
+    .logLink {
+        width: 100%;
+    }
+    .login a.link {
+        background-color: #efefef;
+    }
+    /*  ///////////////////-- User Show --- \\\\\\\\\\\\\\\\\\ */
+    .userShow {
+        flex-direction: column;
+    }
+    .rightContainer {
+        width: auto;
+        height: auto;
+    }
+    .userShow h1 {
+        margin: 10% 0;
+    }
+}

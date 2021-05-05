@@ -1,0 +1,25 @@
+{% extends 'layout.html.twig' %}
+
+{% block content %}
+    <div class="wrapper edit">
+        
+        <div class="rightContainer">
+            <h1>Modifier </h1>
+            <div class="outerContainer">
+                <div class="innerContainer">
+                    <img class="avatar" src="/assets/images/membres/avatars/{{user.avatar}}" alt="photo profil"/>
+                </div>
+            </div>
+            <div class="reputation">
+                <p class="rank">Rang : {{ user.rang }}</p>
+                <p class="rate">{{ rate|last.average }}/5 <span>pour {{ rate|last.nbRate}} avis</span></p>
+            </div>
+        </div>
+        
+        <div>
+            {% include 'User/_form.html.twig' %}
+        </div>
+
+    </div>
+    
+{% endblock %}

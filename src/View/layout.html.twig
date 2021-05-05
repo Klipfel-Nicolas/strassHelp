@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="fr">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>{% block title %}{% endblock %}</title>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Advent+Pro:wght@200;400&family=Barlow:ital,wght@0,100;0,800;1,400&family=Economica:wght@400;700&family=Josefin+Sans:wght@100;200;400&family=M+PLUS+Rounded+1c:wght@100;400;800&family=Montserrat+Alternates:wght@100;200;400;800&family=Montserrat:wght@100;400;900&family=Roboto:ital,wght@0,300;0,900;1,400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/assets/css/style.css">
+    {% block stylesheet %}{% endblock %}
+    <link rel="icon" href="/assets/images/favicon.png">
+</head>
+
+<body>
+    
+    {% include 'Default/header.html.twig' %}
+        
+    
+    
+    
+    
+    {% block content %}{% endblock %}
+    
+    {% include 'Default/script.js.twig' %}
+</body>
+</html>
+
+

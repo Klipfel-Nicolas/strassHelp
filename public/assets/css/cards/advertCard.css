@@ -1,0 +1,43 @@
+.advert .card {
+    box-shadow: -1rem 0 3rem #000;
+    margin: 50px 0;
+    transition: all .2s;
+    text-align: start;
+}
+
+.advert .card:hover {
+    transform: translateY(-1rem);
+}
+
+.advert .card:hover~.card {
+    transform: translateX(130px);
+}
+
+.advert .card:not(:first-child) {
+    margin-left: -130px;
+}
+
+.advert p {
+    color: var(--grey-medium);
+}
+
+.advert .review span {
+    font-size: .9rem;
+}
+
+.advert .card:hover .review * {
+    color: var(--yellow);
+}
+
+.advert footer.cardFooter {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.advert footer.cardFooter img {
+    width: 60px;
+    height: 60px;
+    border-radius: 100%;
+    border: 1px solid var(--grey-medium);
+}

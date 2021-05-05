@@ -1,0 +1,45 @@
+
+<form method="post">
+	<input type="hidden" value="{{ advert.id }}" name="id" >
+     <input type="hidden" value={{ session.user.id }} name="user_id">
+
+     <div>
+          <label for="title">Titre :</label>
+          <input type="text" value="{{ advert.title }}" name="title" >
+          <p class="errors">{{errors.title1}}</p>
+     </div>
+     
+     <div>
+          <label for="category">Catégorie :</label>
+          <select name="category_id">
+               <option value="">--selectioner une categorie</option>
+               {% for key in category %}
+                    <option value="{{key.id}}">{{key.name}}</option>
+               {% endfor %}
+          </select>
+          <p class="errors">{{errors.category_id1}}</p>
+     </div>
+     <div>
+          <label for="description">Description :</label>
+          <textarea type="text" value="{{ advert.description }}" name="description"></textarea>
+          <p class="errors">{{errors.description1}}</p>
+     </div>
+     
+     <div>
+          <label for="disponibility">Disponibilité :</label>
+          
+          <select name="disponibility_id">
+               <option>--Vos disponibilité</option>
+               {% for key in disponibility %}
+                    <option value="{{key.id}}">{{key.timeTable}}</option>
+               {% endfor %}
+          </select>
+          <p class="errors">{{errors.disponibility1}}</p>
+     </div>
+
+     <div class="formLink">
+          <a href="/user/userShow/{{ session.user.id }}">Retour</a>
+          <input type="submit" value="Valider">
+     </div>
+
+</form>

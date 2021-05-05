@@ -1,0 +1,32 @@
+ <form method="post" action="">
+        <fieldset>
+            <legend>
+                Rechercher :
+            </legend>
+
+            <label for="category_id">Par catégorie : </label>
+
+            <select name="category_id">
+                <option value="">Toute</option>
+                {% for key in category %}
+                        <option value="{{key.id}}">{{key.name}}</option>
+                {% endfor %}
+            </select>
+
+            <label for="disponibility_id"> Par disponibilité : </label>
+
+            <select name="disponibility_id">
+               <option>Toute</option>
+               {% for key in disponibility %}
+                    <option value="{{key.id}}">{{key.timeTable}}</option>
+               {% endfor %}
+            </select>
+
+            <div>
+                <label for="search">Par helper : </label>
+                <input type="search" name="search" placeholder="Rechercher...">
+            </div>
+
+            <input type="submit" value="Rechercher">
+        </fieldset>
+</form>

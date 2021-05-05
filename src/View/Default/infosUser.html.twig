@@ -1,0 +1,29 @@
+<aside class="profilDetails">      
+    
+    <div class="card">    
+        
+        <header>
+            <div class="avatarContainer">
+                <img class="usersAvatar" src="/assets/images/membres/avatars/{{session.user.avatar}}">
+            </div>
+            <h4>{{ session.user.userLastName }} {{ session.user.userFirstName }}</h4>
+            <p class="fontLight">{{ session.user.mail }} </p>
+        </header>
+        
+        <div class="body">            
+            <p class="rang">Rang {{ session.user.rang }} </p>
+            <p class="badge">badge : {{ session.user.badge }} </p> 
+        </div>
+        
+        <div class="footer">
+            <a href="/user/userShow/{{ session.user.id }}">Profil</a>
+            {% if session.user.status == 1 %}
+            <a href="/user/userAdmin">Admin</a>
+            {% endif %}
+        </div>
+   
+    </div>
+
+</aside>         
+       
+       

@@ -1,0 +1,10 @@
+{% extends 'layout.html.twig' %}
+
+{% block content %}
+    <h1> your title : </h1><p> {{ advert.title }} </p> 
+    <h1>  your description: </h1><p> {{advert.description}} </p> 
+    <h1>  your comment : </h1><p> {{advert.comment}} </p> 
+
+    {% include 'Advert/_form.html.twig' %}
+    <a href="/Advert/show/{{ advert.id }}">Back</a>
+{% endblock %}

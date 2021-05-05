@@ -1,0 +1,18 @@
+{% extends 'layout.html.twig' %}
+
+{% block content %}
+    <h1>Horaire</h1>
+    
+    <a href="/disponibility/add">Ajouter un Horaire</a> <br> 
+    <a href="/User/userAdmin">retour à la page Admin</a><br><br>
+    
+    {% for disponibility in disponibilitys %}
+
+        <li>Nom Horaire : {{ disponibility.timeTable }}<a href="/Disponibility/edit/{{ disponibility.id }}">Editer vos horaires</a>
+            <form class="delete" action="/Disponibility/delete/{{ disponibility.id }}" method="POST">
+                <button>Supprimer</button>
+            </form>
+        </li><br>
+
+    {% endfor %}
+{% endblock %}

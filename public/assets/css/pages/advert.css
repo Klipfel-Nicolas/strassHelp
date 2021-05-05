@@ -1,0 +1,20 @@
+.advertList {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+}
+
+.allAdvert .card {
+    padding: 15%;
+}
+
+.adver.allAdvert .card:hover~.card {
+    transform: translateX(50px);
+}
+
+.advert.allAdvert .card:not(:first-child) {
+    margin-left: -50px;
+}
+
+.allAdvert a {
+    display: inline-block;
+}

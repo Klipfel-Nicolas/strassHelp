@@ -1,0 +1,91 @@
+.home .bestAdvert {
+    display: flex;
+    height: 90vh;
+    align-items: center;
+    justify-content: center;
+}
+
+.text {
+    width: 50%;
+}
+
+.slider {
+    display: flex;
+    align-items: center;
+    width: 700px;
+    height: 700px;
+    border-radius: 100%;
+    background: linear-gradient(90deg, var(--salmon), var(--orange));
+}
+
+.bestAdvert .card .body {
+    border-color: var(--light-blue);
+}
+
+
+/* ---------------------------------------- SECTION Helper ---------------------------------------- */
+
+.bestHelper {
+    height: 100vh;
+    align-items: flex-end;
+}
+
+.bestHelper,
+.cardList {
+    display: flex;
+}
+
+.cardList {
+    height: 50%;
+    transform-style: preserve-3d;
+    perspective: 700px;
+}
+
+.cardList .card {
+    transform-style: preserve-3d;
+    transition: all .5s;
+}
+
+.cardList:hover .card {
+    transform: rotateY(25deg);
+}
+
+.cardList .card:hover~.card {
+    transform: rotateY(-25deg);
+}
+
+.cardList .card:hover {
+    transform: rotateY(0deg) scale(1.15);
+    z-index: 1;
+    box-shadow: 0 25px 40px rgba(0, 0, 0, 0.5);
+}
+
+
+/* ---------------------------------------- FOOTER ---------------------------------------- */
+
+footer.pageFooter {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+}
+
+footer.pageFooter img {
+    margin-bottom: -10px;
+}
+
+footer.pageFooter .footerLink {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    height: 30vh;
+    background-color: black;
+    text-align: center;
+}
+
+footer.pageFooter .footerLink h4 {
+    color: var(--white);
+}
+
+footer.pageFooter .footerLink a {
+    color: var(--salmon);
+}

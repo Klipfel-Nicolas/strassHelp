@@ -1,0 +1,8 @@
+{% extends 'layout.html.twig' %}
+
+{% block content %}
+    <h1>Modification de la catégorie : </h1> <br>
+    {{ category.name }}
+    {% include 'category/_form.html.twig' %}
+    <a href="/Category/index">retour à la liste</a>
+{% endblock %}

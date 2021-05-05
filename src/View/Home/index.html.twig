@@ -1,0 +1,109 @@
+{% extends 'layout.html.twig' %}
+
+{% block content %}
+
+        <div class="home wrapper">
+                <h2>Hello {% if session %} {{session.user.userLastName}} <br> {{session.user.userFirstName}}{% else %}Helper{% endif %} !</h2>
+
+                <section class="bestAdvert advert">
+                        <div class="text">
+                                
+                        </div>
+                        <div class="round">
+                                <div class="slider">
+                                        {% for advert in bestAdvert %}
+                                                <article class="card">
+                                                        <header>
+                                                                <a href="/Advert/show/{{advert.id}}"><h4>{{ advert.title }}</h4></a> 
+                                                                <p>{{advert.name}}</p>          
+                                                        </header>
+                                                                        
+                                                        <div class="body">     
+                                                                <div class="adress">
+                                                                        <p class="fontLight"> {{ advert.description|slice(0,50) ~'...'}} </p>
+                                                                </div>
+                                                                <div class="review">
+                                                                        <p>Note : {{advert.rate}}/5 </p>
+                                                                        <p><span>{{advert.nbRate}} avis</span></p>
+                                                                </div>
+
+                                                        </div>
+                                                                        
+                                                        <footer class="cardFooter">        
+                                                                <img src="/assets/images/membres/avatars/{{advert.avatar}}" alt="helper avatar">
+                                                                <p>{{advert.firstName}} {{advert.lastName}}</p>                       
+                                                        </footer>
+                                                </article>
+                                        {% endfor %}
+                                </div>
+                        </div>
+                </section>
+
+
+                <section class="bestHelper">
+
+                         <div class="cardList">
+
+                                {% for user in bestUser %}
+                                         <article class="card">
+                            
+                                                <header>
+                                                        <div class="avatarContainer">
+                                                                <img class="usersAvatar" src="/assets/images/membres/avatars/{{user.avatar}}">
+                                                        </div>
+                                                        <h4>{{ user.lastName }} {{ user.firstName }}</h4> 
+                                                </header>
+                                                                
+                                                <div class="body">     
+                                                        <div class="adress">
+                                                                <p class="fontLight"> {{ user.adresseNumber}} {{user.adresseStreet}} <br> {{ user.adressePostal}} {{user.adresseCity}}  </p>
+                                                        </div>
+
+                                                        <p>Note : {{user.rate}}/5 </p>  
+                                                        <p class="rang"> Rang : {{ user.rang }} </p>
+                                                </div>
+                                                                
+                                                <footer class="cardFooter">
+                                                        <a href="/user/userShow/{{ user.id }}" class="btn">Profil</a>                           
+                                                </footer>
+                                        </article>
+                                {% endfor %}
+                        </div>
+                </section>
+
+                
+        </div>
+        
+        <footer class="pageFooter">
+                        
+                         <img src="/assets/images/img/footer.svg" alt="strasbourg skyline"/>
+                      
+                        <div class="footerLink">
+                                <div>
+                                        <h4>Nos partenaires</h4>
+                                        <ul>
+                                                <li><a href="#">StrassZik</a></li>
+                                                <li><a href="#">StrassBook</a></li>
+                                                <li><a href="#">StrassCook</a></li>
+                                        </ul>
+                                </div>
+                                <div>
+                                        <h4>Nous Retrouver</h4>
+                                        <ul>
+                                                <li><a href="#">Facebook</a></li>
+                                                <li><a href="#">Instagram</a></li>
+                                                <li><a href="#">Twitter</a></li>
+                                        </ul>
+                                </div>
+                                <div>
+                                        <h4>Liens utiles</h4>
+                                        <ul>
+                                                <li><a href="#"></a></li>
+                                                <li><a href="#"></a></li>
+                                                <li><a href="#"></a></li>
+                                        </ul>
+                                </div>
+                        </div>
+                </footer>
+        
+{% endblock %}
